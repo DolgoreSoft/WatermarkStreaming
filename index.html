@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
+    <script>
+      window.onload = function () {
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+        if (/android/i.test(userAgent)) {
+          // 안드로이드 → 구글플레이
+          window.location.href = "https://play.google.com/store/apps/details?id=com.susuryo.watermarkstreaming";
+        } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+          // iOS → 앱스토어
+          window.location.href = "https://apps.apple.com/app/6474851727";
+        } else {
+          // 그 외 → 랜딩페이지 또는 홈페이지
+          window.location.href = "https://play.google.com/store/apps/details?id=com.susuryo.watermarkstreaming";
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <p>잠시만 기다려주세요... 자동으로 앱스토어로 이동 중입니다.</p>
+  </body>
+</html>
